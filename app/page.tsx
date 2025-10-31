@@ -14,26 +14,28 @@ export default function Portfolio() {
   return (
     <div className="bg-white text-foreground min-h-screen overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 right-0 z-50 p-6">
-        <div className="flex gap-8">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-sm font-medium hover:text-amber-500 transition-colors"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("work")}
-            className="text-sm font-medium hover:text-amber-500 transition-colors"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-sm font-medium hover:text-amber-500 transition-colors"
-          >
-            Contacts
-          </button>
+      <nav className="sticky top-0 z-50 p-6 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div className="max-w-7xl mx-auto flex justify-end">
+          <div className="flex gap-8 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full px-8 py-4 shadow-lg">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-sm font-medium hover:text-amber-500 transition-colors duration-200"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("work")}
+              className="text-sm font-medium hover:text-amber-500 transition-colors duration-200"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-sm font-medium hover:text-amber-500 transition-colors duration-200"
+            >
+              Contacts
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -52,8 +54,8 @@ export default function Portfolio() {
             </h1>
 
             <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-xl">
-              Hi, I'm Srinivasakandan R, a Computer Science Engineering student passionate about building interactive
-              and smart web solutions.
+              Hi, I'm Srinivasakandan, a Computer Science Engineering student passionate about building interactive and
+              smart web solutions.
             </p>
 
             <div className="flex gap-4 flex-wrap">
@@ -77,7 +79,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-2 flex justify-center"
+            className="order-1 lg:order-2 flex justify-end"
           >
             <div className="relative w-full max-w-md">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full opacity-20 blur-3xl"></div>
@@ -99,7 +101,9 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-4xl font-bold mb-6">About Me</h2>
+            <h2 className="text-4xl font-bold mb-6 hover:text-orange-500 transition-colors duration-300 cursor-pointer">
+              About Me
+            </h2>
             <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
               I'm a first-year Computer Science and Engineering student at Loyola ICAM College of Engineering and
               Technology. I'm passionate about learning new technologies, exploring modern web frameworks, and creating
@@ -115,11 +119,12 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-50 border-slate-200 h-full hover:shadow-lg transition-shadow">
+              <Card className="bg-slate-50 border-slate-200 h-full hover:shadow-lg hover:border-orange-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Fullstack Developer</h3>
-                  <p className="text-amber-500 text-sm font-medium mb-3">DesignHub Co. (2022 - Present)</p>
-                  <p className="text-slate-600 leading-relaxed">
+                  <h3 className="text-xl font-semibold mb-2 hover:text-orange-500 transition-colors duration-300">
+                    Fullstack Developer
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed hover:text-orange-500 transition-colors duration-300">
                     I specialize in creating interactive, responsive, and user-friendly web solutions using React,
                     Node.js, Express, and SQLite.
                   </p>
@@ -133,11 +138,12 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-50 border-slate-200 h-full hover:shadow-lg transition-shadow">
+              <Card className="bg-slate-50 border-slate-200 h-full hover:shadow-lg hover:border-orange-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Blockchain Expert</h3>
-                  <p className="text-amber-500 text-sm font-medium mb-3">Creative Studio Inc. (2020 - 2022)</p>
-                  <p className="text-slate-600 leading-relaxed">
+                  <h3 className="text-xl font-semibold mb-2 hover:text-orange-500 transition-colors duration-300">
+                    Blockchain Expert
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed hover:text-orange-500 transition-colors duration-300">
                     I build modern, secure, and user-friendly web and blockchain applications using technologies like
                     React, Node.js, and Solidity.
                   </p>
@@ -156,7 +162,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold mb-12"
+            className="text-4xl font-bold mb-12 hover:text-orange-500 transition-colors duration-300 cursor-pointer"
           >
             Skills & Expertise
           </motion.h2>
@@ -182,7 +188,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-amber-500 hover:shadow-md transition-all"
+                className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-orange-500 hover:text-orange-500 hover:shadow-md hover:bg-orange-50 transition-all duration-300 cursor-pointer"
               >
                 <p className="font-medium text-slate-800">{skill}</p>
               </motion.div>
@@ -199,7 +205,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold mb-12"
+            className="text-4xl font-bold mb-12 hover:text-orange-500 transition-colors duration-300 cursor-pointer"
           >
             My Projects
           </motion.h2>
@@ -226,18 +232,22 @@ export default function Portfolio() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-slate-50 border-slate-200 overflow-hidden hover:shadow-lg transition-shadow">
+                <Card className="bg-slate-50 border-slate-200 overflow-hidden hover:shadow-lg hover:border-orange-400 transition-all duration-300">
                   <CardContent className="p-8">
                     <div className="flex items-start justify-between mb-4">
-                      <h3 className="text-2xl font-semibold text-slate-900">{project.title}</h3>
-                      <ExternalLink className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                      <h3 className="text-2xl font-semibold text-slate-900 hover:text-orange-500 transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <ExternalLink className="w-5 h-5 text-amber-500 flex-shrink-0 hover:text-orange-500 transition-colors duration-300" />
                     </div>
-                    <p className="text-slate-600 leading-relaxed mb-6">{project.description}</p>
+                    <p className="text-slate-600 leading-relaxed mb-6 hover:text-orange-600 transition-colors duration-300">
+                      {project.description}
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-orange-100 hover:text-orange-700 transition-colors duration-300"
                         >
                           {tag}
                         </span>
